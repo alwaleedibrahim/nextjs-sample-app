@@ -1,0 +1,27 @@
+.nav-link {
+    padding: 1rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: fit-content;
+}
+.nav-link:hover {
+    background-color: #056464;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+
+.nav-links-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.btn {
+    background-color: #056464;
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 5%;
+}
