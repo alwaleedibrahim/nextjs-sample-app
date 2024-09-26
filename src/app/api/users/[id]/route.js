@@ -21,7 +21,12 @@ export async function GET(_, { params: { id } }) {
 
 export async function PATCH(request, { params: { id } }) {
   try {
-    const user = await UserModel.findByIdAndUpdate(id, await request.json(),{new: true});
+    const inputUser = await request.json()
+    const validation = userValidationSchema.safeParse(inputUser)
+    if (!validation) {
+      return new Response(JSON.stringify({ message:validation.error.errors}),{status:400})
+    }
+    const user = await UserModel.findByIdAndUpdate(id, inputUser,{new: true});
     return new Response(JSON.stringify({ message: "updated", data: user }), {
       status: 201,
     });

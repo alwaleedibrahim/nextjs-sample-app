@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { boolean } from "zod";
 
 const UserSchema = new Schema({
   name: {
@@ -9,6 +10,13 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     unique: true
+  },
+  image: {
+    type: String,
+  },
+  isVerified: {
+    type: Boolean,
+    default: false
   },
   address: {
     type: String,

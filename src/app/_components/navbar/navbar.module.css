@@ -25,3 +25,27 @@
     padding: 5px;
     border-radius: 5%;
 }
+
+.form {
+    display: inline-block;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+}
+
+.user-card img {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-options>* {
+    margin-left: 10px;
+    margin-right: 10px;
+}
