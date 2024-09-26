@@ -21,9 +21,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const response = await (await GET(null, { params })).json();
   const user = response.data;
-  return {
-    title: user.name,
-  };
+  if (user) {
+    return {
+      title: user.name,
+    };
+  }
+  else {
+    return {
+      title: 'user details',
+    };
+  }
 }
 export default async function UserDetails({ params }) {
   try {
@@ -31,7 +38,7 @@ export default async function UserDetails({ params }) {
     const user = response.data;
 
     return (
-      <div
+       user && <div
         style={{
           display: "flex",
           flexDirection: "column",
